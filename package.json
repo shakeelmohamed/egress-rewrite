@@ -4,8 +4,8 @@
   "description": "A re-write of egress-bootstrap using modern tech",
   "main": "index.js",
   "scripts": {
-    "pretest": "eslint *.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "eslint --fix **/**.js",
+    "test": "istanbul cover _mocha -- -R spec",
     "start": "node index.js"
   },
   "private": true,
@@ -24,9 +24,12 @@
     "crypto-random-string": "^1.0.0",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.0-rc.4",
+    "raven": "^2.2.1"
   },
   "devDependencies": {
-    "eslint": "^4.8.0"
+    "eslint": "^4.8.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1"
   }
 }
